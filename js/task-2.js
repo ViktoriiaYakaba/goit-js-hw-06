@@ -11,10 +11,12 @@ class Storage  {
         this.#items.push(newItem);
     }
     removeItem(itemToRemove) {
-        this.#items.shift(itemToRemove);
+     this.#items = this.#items.filter(item => item !== itemToRemove);
+
     }
 
 };
+
 
 const storage = new Storage(["Nanitoids", "Prolonger", "Antigravitator"]);
 console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator"]
